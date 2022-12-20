@@ -2,18 +2,20 @@ import styled from "styled-components";
 import {LIGHT_BLUE} from "./Colors"
 import {DARK_BLUE} from "./Colors"
 import {GRAY_BORDERS} from "./Colors"
-import Logo from "../assets/logo.png"
 
 export const LogoImage = styled.img`
-        width: 75px;
-        height: 50px;
-        background-image: ${Logo};
+        width: 150px;
+        height: 120px;
+        padding: 0;
+        margin: 0;
 `
 export const Title = styled.h1`
         font-size: 68.98px;
         line-height: 86.23px;
         font-weight: 400;
         color: ${DARK_BLUE};
+        padding: 0;
+        margin: 0px 0px 50px 0px;
 `
 export const HomeButton = styled.button`
     width: 303px;
@@ -78,7 +80,6 @@ export const AvatarFrame = styled.img`
 export const Footer = styled.div`
     width: 375px;
     height: 70px;
-    background-color: blue;
     box-sizing: border-box;
     padding: 0px 15px;
     display: flex;
@@ -86,6 +87,7 @@ export const Footer = styled.div`
     justify-content: space-between;
     position: absolute;
     bottom: 0;
+    background-color: #ffffff;
 
     a{
         font-size: 17.98px;
@@ -96,7 +98,7 @@ export const Footer = styled.div`
     }
 
 `
-export const Today = styled.div`
+export const TodayButton = styled.div`
     width: 91px;
     height: 91px;
     border-radius: 100%;

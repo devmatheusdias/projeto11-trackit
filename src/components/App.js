@@ -1,25 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
+import React, {useContext, useState} from "react";
 
-import Login from "./Login";
-import SignUp from "./SignUp";
-import Habits from "./Habits";
+import PrivateRoutes from "../routes/private.routes";
+import PublicRoutes from "../routes/public.routes";
+import {AuthContext} from "../contexts/AuthContext";
 
 function App() {
-  return (
-    <AppContainer>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login></Login>} />
-          <Route path="/cadastro" element={<SignUp></SignUp>} />
-          <Route path="/habitos" element={<Habits></Habits>} />
-        </Routes>
-      </BrowserRouter>
-    </AppContainer>
-  );
-}
 
-export default App;
+  const [token, setToken] = useState("");
+
+  const {auth} = useContext(AuthContext)
+  return auth ? <PrivateRoutes token={token}></PrivateRoutes> : <PublicRoutes setToken={setToken}></PublicRoutes>
+  
+}
 
 export const AppContainer = styled.div`
   width: 375px;
@@ -28,3 +21,4 @@ export const AppContainer = styled.div`
   margin: 0 auto;
 `
 
+export default App;
